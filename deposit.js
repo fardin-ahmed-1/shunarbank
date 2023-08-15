@@ -2,6 +2,15 @@ document.getElementById('deposit_request').addEventListener('click',function(){
     const depositInput=document.getElementById('Deposit_input');
     const newDepositAmountstring=depositInput.value;
     const newDepositAmount=parseFloat(newDepositAmountstring)
+
+    if(isNaN(newDepositAmount)){
+        alert("write a valid number")
+        return
+    }
+    if(newDepositAmount<=0){
+        alert(`You can't Deposit ${newDepositAmount}`)
+        return
+    }  
     
     
     const depositTotalElement=document.getElementById('deposit_total');
